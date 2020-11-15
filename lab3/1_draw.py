@@ -1,14 +1,36 @@
-import pygame as pg
+# здесь подключаются модули
+import pygame
+import sys
 
+# здесь определяются константы,
+# классы и функции
+FPS = 60
 
-def main():
-    pg.display.set_mode((600, 400))
-    pg.init()
-    while True:
-        for i in pg.event.get():
-            if i.type == pg.QUIT:
-                return
+# здесь происходит инициация,
+# создание объектов
+pygame.init()
+pygame.display.set_mode((600, 400))
+clock = pygame.time.Clock()
 
+# если надо до цикла отобразить
+# какие-то объекты, обновляем экран
+pygame.display.update()
 
-if __name__ == "__main__":
-    main()
+# главный цикл
+while True:
+
+    # задержка
+    clock.tick(FPS)
+
+    # цикл обработки событий
+    for i in pygame.event.get():
+        pygame.display.set_caption(str(i))
+        if i.type == pygame.QUIT:
+            sys.exit()
+
+    # --------
+    # изменение объектов
+    # --------
+
+    # обновление экрана
+    pygame.display.update()
