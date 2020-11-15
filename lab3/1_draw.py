@@ -1,3 +1,14 @@
-import pygame
+import pygame as pg
 
-pygame.display.set_mode((600, 400))
+
+def main():
+    pg.display.set_mode((600, 400))
+    pg.init()
+    while True:
+        for i in pg.event.get():
+            if i.type == pg.QUIT:
+                return
+
+
+if __name__ == "__main__":
+    main()
