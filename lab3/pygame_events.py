@@ -6,6 +6,7 @@ W = 700  # ширина экрана
 H = 300  # высота экрана
 WHITE = (255, 255, 255)
 BLUE = (0, 70, 225)
+KHAKI = (240, 230, 140)
 
 sc = pygame.display.set_mode((W, H))
 clock = pygame.time.Clock()
@@ -19,13 +20,17 @@ while 1:
     for i in pygame.event.get():
         if i.type == pygame.QUIT:
             sys.exit()
-        elif i.type == pygame.KEYDOWN:
-            if i.key == pygame.K_LEFT:
-                x -= 3
+        elif i.type == pygame.KEYUP or i.type == pygame.KEYDOWN:
+            if i.key == pygame.K_UP:
+                y -= 10
+            elif i.key == pygame.K_DOWN:
+                y += 10
             elif i.key == pygame.K_RIGHT:
-                x += 3
+                x += 10
+            elif i.key == pygame.K_LEFT:
+                x -= 10
 
     sc.fill(WHITE)
-    pygame.draw.circle(sc, BLUE, (x, y), r)
+    pygame.draw.circle(sc, KHAKI, (x, y), r)
     pygame.display.update()
     clock.tick(FPS)
