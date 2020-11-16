@@ -37,7 +37,7 @@ while 1:
                 motion = DOWN
         elif i.type == pygame.KEYUP:
             if i.key in [pygame.K_LEFT,
-                         pygame.K_RIGHT]:
+                         pygame.K_RIGHT, pygame.K_UP, pygame.K_DOWN]:
                 motion = STOP
 
     sc.fill(WHITE)
