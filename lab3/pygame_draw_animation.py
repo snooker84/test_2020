@@ -12,7 +12,7 @@ sc = pygame.display.set_mode((WIN_WIDTH, WIN_HEIGHT))
 
 x = 0
 backward_flag = 0
-rect_size = 200
+rect_size = 100
 
 while 1:
     if x == WIN_WIDTH - rect_size:
